@@ -1,6 +1,7 @@
 import Square from './shapes/square.js';
 import Rectangle from './shapes/rectangle.js';
 import Circle from './shapes/circle.js';
+import Triangle from './shapes/triangle.js';
 
 // функция parseLine(line) по строке создаёт нужный объект
 export function parseLine(line) {
@@ -35,6 +36,15 @@ export function parseLine(line) {
       if (radiusIndex === -1) throw new Error('Circle missing Radius parameter');
       const radius = Number(parts[radiusIndex + 1]);
       return new Circle(radius);
+    }
+
+    case 'Triangle': {
+      const coords = parts
+        .filter((_, i) => i >= 2)
+        .map(Number)
+        .filter(n => !isNaN(n));
+      if (coords.length !== 6) throw new Error("Triangle requires 3 points");
+      return new Triangle(...coords);
     }
 
     default:
