@@ -1,8 +1,10 @@
 import Shape from "./shape.js";
 
 export default class Circle extends Shape {
-  constructor(radius) {
+  constructor(x, y, radius) {
     super();
+    this.x = x; // центр X
+    this.y = y; // центр Y
     this.radius = radius;
   }
 
@@ -11,6 +13,6 @@ export default class Circle extends Shape {
   }
 
   getArea() {
-    return Math.PI * this.radius * this.radius;
+    return Math.PI * this.radius ** 2;
   }
 }

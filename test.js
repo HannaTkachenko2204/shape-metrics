@@ -22,7 +22,7 @@ const tests = [
   },
   {
     name: "Circle r=1",
-    shape: new Circle(1),
+    shape: new Circle(0, 0, 1), // x=0, y=0, radius=1
     perimeter: 2 * Math.PI,
     area: Math.PI,
   },
