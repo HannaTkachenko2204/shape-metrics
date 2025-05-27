@@ -47,17 +47,17 @@ You should see:
 
 ## 📁 Project Structure 
 SHAPE-METRICS/
+  index.js # Main program: reads input, processes shapes #
+  input.txt # Sample input data #
+  package.json # Project metadata and scripts #
+  parser.js # Parses each line into a shape object #
+  test.js # Basic test suite #
   shapes/
-    ├── circle.js       # Circle implementation
-    ├── rectangle.js    # Rectangle implementation
-    ├── shape.js        # Abstract base class
-    ├── square.js       # Square implementation
-    └── triangle.js     # Triangle implementation
-  index.js         # Main program: reads input, processes shapes
-  input.txt        # Sample input data
-  package.json     # Project metadata and scripts
-  parser.js        # Parses each line into a shape object
-  test.js          # Basic test suite
+  circle.js # Circle implementation #
+  rectangle.js # Rectangle implementation #
+  shape.js # Abstract base class #
+  square.js # Square implementation #
+  triangle.js # Triangle implementation #
 
 ## 🛠️ Adding New Shapes
 To add support for a new shape:
