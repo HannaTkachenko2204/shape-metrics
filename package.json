@@ -5,9 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test.js"
   },
   "keywords": [],
-  "author": "Viktor Mazur <viktormazur832@gmail.com>",
+  "author": "Hanna Tkachenko <anna.kuvakina91@gmail.com>",
   "license": "ISC"
 }

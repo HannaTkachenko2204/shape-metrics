@@ -41,7 +41,7 @@ Run the program: **node index.js**   (Enter)
 Then manually enter shape lines: **Circle Center 0 0 Radius 2**   (Enter)
 
 ## 🧪 How to Run Tests
-This project includes basic unit tests to verify correctness of the shape calculations: node test.js
+This project includes basic unit tests to verify correctness of the shape calculations: **node test.js**
 You should see:
 ✅ All tests passed!
 
