@@ -3,14 +3,16 @@ import Rectangle from './shapes/rectangle.js';
 import Circle from './shapes/circle.js';
 import Triangle from './shapes/triangle.js';
 
+// функция сравнения с допуском (погрешность)
 function approxEqual(a, b, epsilon = 0.01) {
   return Math.abs(a - b) < epsilon;
 }
 
+// массив тестов
 const tests = [
   {
     name: "Square 2",
-    shape: new Square(2),
+    shape: new Square(2), // создаём экземпляр фигуры (сторона = 2)
     perimeter: 8,
     area: 4,
   },
@@ -34,6 +36,8 @@ const tests = [
   },
 ];
 
+
+// Прогон тестов: цикл перебирает все тесты, вычисляет периметр и площадь через методы объекта shape, проверяет, что они близки к ожидаемым
 for (const { name, shape, perimeter, area } of tests) {
   console.assert(approxEqual(shape.getPerimeter(), perimeter), `${name} perimeter failed`);
   console.assert(approxEqual(shape.getArea(), area), `${name} area failed`);
