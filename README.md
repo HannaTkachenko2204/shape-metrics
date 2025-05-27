@@ -1,6 +1,6 @@
 # 📐 Shape Metrics
 
-This Node.js program reads data about 2D shapes from a text file, calculates their perimeter and area, and prints the result in a consistent format.
+This Node.js program reads data about 2D shapes from a text file or standard input, calculates their perimeter and area, and prints the result in a consistent format.
 
 ## ✅ Features
 
@@ -10,7 +10,7 @@ This Node.js program reads data about 2D shapes from a text file, calculates the
   - `Circle`
   - `Triangle`
 - Calculates perimeter and area for each shape
-- Reads input line by line from a file
+- Handles input from a file or standard input
 - Prints results to standard output
 - Gracefully handles malformed input
 - Includes simple test suite
@@ -32,26 +32,32 @@ Triangle Perimeter 12.00 Area 6.00
 
 ## 🚀 How to Run
 
-1. Install [Node.js]
-2. Place input data in a file named `input.txt`
-3. Run the program: node index.js
+Install [Node.js]
+### Run with file input:
+Place input data in a file named `input.txt`
+Run the program: node index.js input.txt
+### Run with standard input:
+Run the program: node index.js   (Enter)
+Then manually enter shape lines: Circle Center 0 0 Radius 2   (Enter)
 
 ## 🧪 How to Run Tests
 This project includes basic unit tests to verify correctness of the shape calculations: node test.js
 You should see:
 ✅ All tests passed!
 
-## 📁 Project Structure
-index.js         # Main program: reads input, processes shapes
-parser.js        # Parses each line into a shape object
-test.js          # Basic test suite
-input.txt        # Sample input data
-shapes/
+## 📁 Project Structure 
+SHAPE-METRICS/
+  shapes/
     ├── circle.js       # Circle implementation
     ├── rectangle.js    # Rectangle implementation
     ├── shape.js        # Abstract base class
     ├── square.js       # Square implementation
     └── triangle.js     # Triangle implementation
+  index.js         # Main program: reads input, processes shapes
+  input.txt        # Sample input data
+  package.json     # Project metadata and scripts
+  parser.js        # Parses each line into a shape object
+  test.js          # Basic test suite
 
 ## 🛠️ Adding New Shapes
 To add support for a new shape:
