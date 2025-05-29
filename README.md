@@ -35,13 +35,13 @@ Triangle Perimeter 12.00 Area 6.00
 Install [Node.js]
 ### Run with file input:
 Place input data in a file named `input.txt`
-Run the program: **node index.js input.txt**
+Run the program: **npm start input.txt**
 ### Run with standard input:
-Run the program: **node index.js**   (Enter)
+Run the program: **npm start**   (Enter)
 Then manually enter shape lines: **Circle Center 0 0 Radius 2**   (Enter)
 
 ## 🧪 How to Run Tests
-This project includes basic unit tests to verify correctness of the shape calculations: **node test.js**
+This project includes basic unit tests to verify correctness of the shape calculations: **npm run jest**
 You should see:
 ✅ All tests passed!
 
