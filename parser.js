@@ -9,13 +9,7 @@ export function parseLine(line) { // line — строка из файла input
   const shapeType = parts[0]; // первый элемент (parts[0]) — это тип фигуры: 'Square', 'Rectangle', 'Circle', 'Triangle'
 
   switch (shapeType) { // разбор по типу фигуры:
-    case 'Square': {
-      // Square TopRight 1 1 Side 1
-      const sideIndex = parts.indexOf('Side');
-      if (sideIndex === -1) throw new Error('Square missing Side parameter');
-      const side = Number(parts[sideIndex + 1]);
-      return new Square(side); // создаем экземпляр new Square(...)
-    }
+    case 'Square': return parserSquare(line)
 
     case 'Rectangle': {
       // Rectangle TopRight 2 2 BottomLeft 1 1
@@ -30,20 +24,7 @@ export function parseLine(line) { // line — строка из файла input
       return new Rectangle(x1, y1, x2, y2);
     }
 
-    case 'Circle': {
-      // Circle Center 1 1 Radius 2
-
-      const centerIndex = parts.indexOf('Center');
-      const radiusIndex = parts.indexOf('Radius');
-      if (centerIndex === -1 || radiusIndex === -1)
-      throw new Error('Circle missing Center or Radius parameter');
-
-      const x = Number(parts[centerIndex + 1]);
-      const y = Number(parts[centerIndex + 2]);
-      const radius = Number(parts[radiusIndex + 1]);
-
-      return new Circle(x, y, radius);
-    }
+    case 'Circle': return parserCircle(line)
 
     case 'Triangle': {
       const coords = parts
@@ -57,4 +38,28 @@ export function parseLine(line) { // line — строка из файла input
     default:
       throw new Error(`Unknown shape type: ${shapeType}`); // если строка начинается с неизвестного слова
   }
+}
+
+export function parserSquare(line) {
+  const parts = line.trim().split(/\s+/);
+
+  const sideIndex = parts.indexOf('Side');
+      if (sideIndex === -1) throw new Error('Square missing Side parameter');
+      const side = Number(parts[sideIndex + 1]);
+      return new Square(side);
+}
+
+export function parserCircle(line) {
+  const parts = line.trim().split(/\s+/);
+
+  const centerIndex = parts.indexOf('Center');
+      const radiusIndex = parts.indexOf('Radius');
+      if (centerIndex === -1 || radiusIndex === -1)
+      throw new Error('Circle missing Center or Radius parameter');
+
+      const x = Number(parts[centerIndex + 1]);
+      const y = Number(parts[centerIndex + 2]);
+      const radius = Number(parts[radiusIndex + 1]);
+
+      return new Circle(x, y, radius);
 }
