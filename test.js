@@ -36,11 +36,13 @@ const tests = [
   },
 ];
 
-
+test('test-shapes', () => {
+  for (const { name, shape, perimeter, area } of tests) {
+    console.assert(approxEqual(shape.getPerimeter(), perimeter), `${name} perimeter failed`);
+    console.assert(approxEqual(shape.getArea(), area), `${name} area failed`);
+  }
+  
+  // console.log("✅ All tests passed!");
+})
 // Прогон тестов: цикл перебирает все тесты, вычисляет периметр и площадь через методы объекта shape, проверяет, что они близки к ожидаемым
-for (const { name, shape, perimeter, area } of tests) {
-  console.assert(approxEqual(shape.getPerimeter(), perimeter), `${name} perimeter failed`);
-  console.assert(approxEqual(shape.getArea(), area), `${name} area failed`);
-}
 
-console.log("✅ All tests passed!");
