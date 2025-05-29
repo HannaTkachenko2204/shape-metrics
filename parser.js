@@ -3,6 +3,11 @@ import Rectangle from './shapes/rectangle.js';
 import Circle from './shapes/circle.js';
 import Triangle from './shapes/triangle.js';
 
+function getParts(line) {
+  const parts = line.trim().split(/\s+/);
+  return parts;
+}
+
 // функция parseLine(line) по строке создаёт нужный объект
 export function parseLine(line) { // line — строка из файла input.txt
   const parts = line.trim().split(/\s+/); // удаляем пробелы по краям и разбиваем строку по пробелам в массив parts
@@ -41,7 +46,7 @@ export function parseLine(line) { // line — строка из файла input
 }
 
 export function parserSquare(line) {
-  const parts = line.trim().split(/\s+/);
+  const parts = getParts(line);
 
   const sideIndex = parts.indexOf('Side');
       if (sideIndex === -1) throw new Error('Square missing Side parameter');
@@ -50,7 +55,7 @@ export function parserSquare(line) {
 }
 
 export function parserCircle(line) {
-  const parts = line.trim().split(/\s+/);
+  const parts = getParts(line);
 
   const centerIndex = parts.indexOf('Center');
       const radiusIndex = parts.indexOf('Radius');
